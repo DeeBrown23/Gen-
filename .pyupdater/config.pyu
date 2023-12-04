@@ -1,0 +1,20 @@
+{
+  "config_dir": "/Users/demetriousbrown/Genè/.pyupdater",
+  "filename": "/Users/demetriousbrown/Genè/.pyupdater/config.pyu",
+  "count": 0,
+  "app_config": {
+    "APP_NAME": "Genè",
+    "CLIENT_CONFIG_PATH": [
+      "client_config.py"
+    ],
+    "COMPANY_NAME": "Hidden Genius Project",
+    "PLUGIN_CONFIGS": {},
+    "UPDATE_PATCHES": true,
+    "MAX_DOWNLOAD_RETRIES": 3,
+    "HTTP_TIMEOUT": 30,
+    "UPDATE_URLS": [
+      "https://github.com/DeeBrown23/Gen-.git"
+    ],
+    "DATA_DIR": "/Users/demetriousbrown/Genè"
+  }
+}

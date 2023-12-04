@@ -15,6 +15,25 @@ def speak_text(text, rate = 130):
     engine.say(text)
     engine.runAndWait()
     
+def get_time_of_day_greeting():
+    current_time = datetime.datetime.now()
+    hour = current_time.hour
+
+    if 6 <= hour < 12:
+        return "Good morning! I'm your virtual assistant. How can I help you today?"
+    elif 12 <= hour < 18:
+        return "Good afternoon! I'm your virtual assistant. How can I assist you?"
+    elif 18 <= hour < 22:
+        return "Good evening! I'm here to help. What can I do for you?"
+    else:
+        return "Hello! It's late. I'm your virtual assistant. How may I assist you at this hour?"
+    
+def get_current_date():
+    current_date = datetime.datetime.now().strftime("%A, %B %d, %Y")
+    return f"Today is {current_date}"
+
+
+    
 def listen_microphone():
     recognizer = sr.Recognizer()
     with sr.Microphone() as source:
@@ -107,10 +126,15 @@ def on_speech_input():
 def process_command(command):
 
         if "hello" in command:
-            speak_text("What's up with it")
+            greeting = get_time_of_day_greeting()
+            speak_text(greeting)
 
         elif "goodbye" in command or "bye" in command:
             speak_text("Peace Out!")
+            
+        elif "date" in command:
+            date = get_current_date()
+            speak_text(date)
         
         elif "take note" in command:
             taking_notes = True
